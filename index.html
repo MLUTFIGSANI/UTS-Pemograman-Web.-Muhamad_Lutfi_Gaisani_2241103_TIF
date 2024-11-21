@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Aplikasi E-Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showProduk()">Daftar Produk</a></li>
+                <li><a href="#" onclick="showKeranjang()">Keranjang</a></li>
+                <li><a href="#" onclick="showCheckout()">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Halaman Daftar Produk -->
+        <section id="produk">
+            <h2>Daftar Produk</h2>
+            <div class="produk-container">
+                <div class="produk" data-id="1">
+                    <h3>Produk 1</h3>
+                    <p>Rp 100.000</p>
+                    <button onclick="tambahKeKeranjang(1, 'Produk 1', 100000)">Tambah ke Keranjang</button>
+                </div>
+                <div class="produk" data-id="2">
+                    <h3>Produk 2</h3>
+                    <p>Rp 200.000</p>
+                    <button onclick="tambahKeKeranjang(2, 'Produk 2', 200000)">Tambah ke Keranjang</button>
+                </div>
+                <div class="produk" data-id="3">
+                    <h3>Produk 3</h3>
+                    <p>Rp 300.000</p>
+                    <button onclick="tambahKeKeranjang(3, 'Produk 3', 300000)">Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Halaman Keranjang -->
+        <section id="keranjang" style="display:none;">
+            <h2>Keranjang Belanja</h2>
+            <table id="keranjang-table">
+                <thead>
+                    <tr>
+                        <th>Nama Produk</th>
+                        <th>Jumlah</th>
+                        <th>Harga</th>
+                        <th>Total</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Produk yang ditambahkan akan muncul di sini -->
+                </tbody>
+            </table>
+            <button onclick="goToCheckout()">Ke Checkout</button>
+            <button onclick="showProduk()">Kembali ke Produk</button>
+        </section>
+
+        <!-- Halaman Checkout -->
+        <section id="checkout" style="display:none;">
+            <h2>Checkout</h2>
+            <p>Total Belanja: <span id="total-belanja">Rp 0</span></p>
+            <button onclick="prosesPembayaran()">Proses Pembayaran</button>
+            <button onclick="showKeranjang()">Kembali ke Keranjang</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
